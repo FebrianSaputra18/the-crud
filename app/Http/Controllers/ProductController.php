@@ -20,17 +20,30 @@ class ProductController extends Controller
             'stock' => $request->stock,
         ]);
 
-        return back();
+        return redirect('/products');
     }
 
     public function viewProducts()
     {
-        return view('products');
+        $products = Product::all();
+        return view('products', compact('products'));
     }
 
-    public function edit()
+    public function edit($id)
     {
-        return view('edit');
+        $product = Product::where('id', $id)->first();
+        return view('edit', compact('product'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        Product::where('id', $id)->update([
+            'product_name' => $request->product_name,
+            'price' => $request->price,
+            'stock' => $request->stock,
+        ]);
+
+        return redirect('/products');
     }
 
 }

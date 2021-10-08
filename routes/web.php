@@ -15,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','ProductController@home');
 
-Route::get('/product','ProductController@viewProducts');
+Route::get('/products','ProductController@viewProducts');
 
-Route::get('/edit','ProductController@edit');
+Route::get('/edit/{id}','ProductController@edit');
 
-Route::post('/store', 'ProductController@store');
+Route::post('/store','ProductController@store');
 
+Route::patch('/update/{id}', 'ProductController@update');

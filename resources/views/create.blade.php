@@ -19,18 +19,18 @@
               <a class="nav-link" href="/">Create Product</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/product">View Products</a>
+              <a class="nav-link" href="/products">View Products</a>
             </li>
           </ul>
         </div>
       </nav>
     <div class="container mt-5" style="width: 33%;">
-        <form class="mb-4" action="/store" method="post">
-          @csrf
+        <form class="mb-4" action="/store" method="POST">
+        @csrf
             <h1 class="text-center mb-4">Create Product</h1>
             <div class="form-group">
                 <label for="">Product Name</label>
-                <input type="text" class="form-control" name='pruduct_name'>
+                <input type="text" class="form-control" name='product_name'>
             </div>
             <div class="form-group">
                 <label for="">Price</label>

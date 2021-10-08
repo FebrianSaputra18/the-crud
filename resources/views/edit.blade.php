@@ -19,25 +19,26 @@
               <a class="nav-link" href="/">Create Product</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/product">View Products</a>
+              <a class="nav-link" href="/products">View Products</a>
             </li>
           </ul>
         </div>
       </nav>
     <div class="container mt-5" style="width: 33%;">
-        <form class="mb-4">
+        <form class="mb-4" action="/update/{{$product->id}}" method="POST">
+        @csrf
             <h1 class="text-center mb-4">Edit Product</h1>
             <div class="form-group">
                 <label for="">Product Name</label>
-                <input type="text" class="form-control">
+                <input velue= "{{$product->product_name}}" type="text" class="form-control" name="product_name">
             </div>
             <div class="form-group">
                 <label for="">Price</label>
-                <input type="number" class="form-control">
+                <input velue= "{{$product->price}}" type="number" class="form-control" name="price">
             </div>
             <div class="form-group">
                 <label for="">Stock</label>
-                <input type="number" class="form-control">
+                <input velue= "{{$product->stock}}" type="number" class="form-control" name="stock">
             </div>
             <button type="submit" id="btn-submit" class="btn btn-primary mt-3">Submit</button>
         </form>

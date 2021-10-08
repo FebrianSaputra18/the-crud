@@ -20,7 +20,7 @@
               <a class="nav-link" href="/">Create Product</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/product">View Products</a>
+              <a class="nav-link" href="/products">View Products</a>
             </li>
           </ul>
         </div>
@@ -38,26 +38,20 @@
                 </tr>
             </thead>
             <tbody>
+                @foreach($products as $product)
+
                 <tr>
-                    <td>1</td>
-                    <td>Django</td>
-                    <td>Rp2000</td>
-                    <td>20</td>
-                    <td>
-                        <a href="" class="btn btn-success">Edit</a>
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </td>
+                  <td>{{$loop->iteration}}</td>
+                  <td>{{$product->product_name}}</td>
+                  <td>{{$product->price}}</td>
+                  <td>{{$product->stock}}</td>
+                  <td>
+                    <a href="/edit/{{$product->id}}" class="btn btn-success">Edit</a>
+                    <button type="submit" class="btn btn-danger" >Delete</button>
+                  </td>
                 </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Django</td>
-                    <td>Rp2000</td>
-                    <td>20</td>
-                    <td>
-                        <a href="" class="btn btn-success">Edit</a>
-                        <button type="submit" class="btn btn-danger">Delete</button>
-                    </td>
-                </tr>
+
+                @endforeach
             </tbody>
         </table>
     </div>  
