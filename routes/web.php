@@ -22,3 +22,6 @@ Route::get('/edit/{id}','ProductController@edit');
 Route::post('/store','ProductController@store');
 
 Route::patch('/update/{id}', 'ProductController@update');
+
+
+Route::delete('/delete/{id}', 'ProductController@delete');
